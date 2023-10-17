@@ -71,7 +71,7 @@ public class Robot extends TimedRobot
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
   }
-
+ 
   /**
    * This function is called once each time the robot enters Disabled mode.
    */
@@ -100,7 +100,8 @@ public class Robot extends TimedRobot
   public void autonomousInit()
   {
     m_robotContainer.setMotorBrake(true);
-    m_autonomousCommand = m_robotContainer.getAutonomousCommand();
+    //m_autonomousCommand = m_robotContainer.getAutonomousCommand();
+    m_autonomousCommand = m_robotContainer.getAutoPaths();
 
     // schedule the autonomous command (example)
     if (m_autonomousCommand != null)
